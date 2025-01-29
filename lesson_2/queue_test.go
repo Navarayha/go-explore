@@ -56,8 +56,8 @@ func TestQueueFront(t *testing.T) {
 	}
 
 	// Проверка Front на пустой очереди
-	queue.Dequeue()
-	queue.Dequeue()
+	_, _ = queue.Dequeue()
+	_, _ = queue.Dequeue()
 	_, err = queue.Front()
 	if err == nil {
 		t.Errorf("Ожидалась ошибка при Front на пустой очереди")
@@ -76,7 +76,7 @@ func TestQueueIsEmpty(t *testing.T) {
 		t.Errorf("Ожидалось false, получено true")
 	}
 
-	queue.Dequeue()
+	_, _ = queue.Dequeue()
 	if !queue.IsEmpty() {
 		t.Errorf("Ожидалось true после Dequeue, получено false")
 	}
